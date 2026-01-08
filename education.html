@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(images/bg\ image\ cream.jpg);
+            background-size: cover;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4b2e83;
+            margin-top: 60px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        caption {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4b2e83;
+            color: white;
+        }
+
+        td {
+            background-color: rgb(250, 250, 250);
+        }
+
+        tr {
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        tr:hover {
+            background-color: #e6dff1;
+            transform: scale(1.01);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .footer-nav {
+            text-align: center;
+            margin: 50px 0 60px;
+        }
+
+        .footer-nav a {
+            display: inline-block;
+            margin: 8px 10px;
+            padding: 12px 22px;
+            background: #4b2e83;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            background: #3a2366;
+            transform: translateY(-2px);
+        }
+
+        /* 🎵 MUSIC ICON */
+        #musicControl {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4b2e83;
+            color: white;
+            font-size: 20px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        #musicControl:hover {
+            background: #6b3fa0;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🎵 AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="audio/audio all/Compress Penjaga Hati.mp3" type="audio/mpeg">
+    
+</audio>
+
+<h1>My Education Background</h1>
+
+<p style="
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+    line-height: 1.8;">
+    My educational journey has shaped my discipline, knowledge, and passion for learning.
+    Each level of education has contributed to my personal growth and academic development,
+    preparing me for future challenges.
+</p>
+
+<table>
+    <caption>Table: Education Details</caption>
+
+    <tr>
+        <th>Level</th>
+        <th>Examination</th>
+        <th>Result</th>
+        <th>School / University</th>
+    </tr>
+
+    <tr>
+        <td>Primary School</td>
+        <td>UPSR</td>
+        <td>3B 2C 1D</td>
+        <td>Sekolah Kebangsaan Dato' Manan</td>
+    </tr>
+
+    <tr>
+        <td rowspan="2">Primary School (Religious)</td>
+        <td>UPKK</td>
+        <td>8A</td>
+        <td rowspan="2">Sekolah Rendah Agama Sungai Tengi Kanan</td>
+    </tr>
+
+    <tr>
+        <td>PSRA</td>
+        <td>Jayyid Jiddan</td>
+    </tr>
+
+    <tr>
+        <td>Secondary School</td>
+        <td>SPM</td>
+        <td>4A 3B 1C 1D</td>
+        <td>Sekolah Menengah Kebangsaan Dato' Harun</td>
+    </tr>
+
+    <tr>
+        <td rowspan="4">University</td>
+        <td>Semester 1</td>
+        <td>CGPA 3.31</td>
+        <td rowspan="4">Universiti Teknologi MARA (UiTM) Rembau</td>
+    </tr>
+
+    <tr>
+        <td>Semester 2</td>
+        <td>CGPA 3.27</td>
+    </tr>
+
+    <tr>
+        <td>Semester 3</td>
+        <td>CGPA 3.26</td>
+    </tr>
+
+    <tr>
+        <td>Semester 4</td>
+        <td>CGPA 3.50</td>
+    </tr>
+</table>
+
+<div class="footer-nav">
+    <a href="homepage.html">⬅ Back to Home</a>
+    <a href="family.html">Next ➡</a>
+</div>
+
+<!-- 🔊 MUSIC BUTTON -->
+<div id="musicControl">🔇</div>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicControl");
+    let isPlaying = false;
+
+    btn.onclick = () => {
+        if (!isPlaying) {
+            music.play();
+            btn.textContent = "🔊";
+            isPlaying = true;
+        } else {
+            music.pause();
+            btn.textContent = "🔇";
+            isPlaying = false;
+        }
+    };
+</script>
+
+</body>
+</html>
