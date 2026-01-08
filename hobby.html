@@ -1,0 +1,261 @@
+<html>
+<head>
+    <title>My Hobby - Gaming</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #001a33, #000814);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        
+        .bg-lines {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(transparent 95%, rgba(0,180,255,0.25)),
+                linear-gradient(90deg, transparent 95%, rgba(0,180,255,0.25));
+            background-size: 40px 40px;
+            animation: moveBg 8s linear infinite;
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        @keyframes moveBg {
+            from { background-position: 0 0; }
+            to { background-position: 40px 40px; }
+        }
+
+       
+        .start-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .start-box {
+            padding: 60px;
+            border: 2px solid #00b4ff;
+            border-radius: 20px;
+            box-shadow: 0 0 40px #00b4ff;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px #00b4ff; }
+            50% { box-shadow: 0 0 55px #00b4ff; }
+            100% { box-shadow: 0 0 20px #00b4ff; }
+        }
+
+        .start-box h1 {
+            color: #00b4ff;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .start-box button {
+            padding: 15px 40px;
+            border-radius: 30px;
+            border: none;
+            background: #00b4ff;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 20px;
+            text-align: center;
+            display: none;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #00b4ff;
+            text-shadow: 0 0 25px #00b4ff;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(0,180,255,0.08);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0,180,255,0.4);
+        }
+
+        .ml-img {
+            width: 220px;
+            margin-top: 30px;
+            cursor: pointer;
+            filter: drop-shadow(0 0 25px #00b4ff);
+            animation: floatImg 3s ease-in-out infinite;
+        }
+
+        @keyframes floatImg {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        
+        .gallery {
+            margin-top: 60px;
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gallery h3 {
+            color: #00b4ff;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px #00b4ff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,180,255,0.6);
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.1);
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 30px;
+            background: #00b4ff;
+            color: black;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 20px #00b4ff;
+        }
+
+        
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 14px 18px;
+            border-radius: 50%;
+            background: #00b4ff;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 0 25px #00b4ff;
+            display: none;
+            z-index: 20;
+            transition: 0.3s ease;
+        }
+
+        .back-top:hover {
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<div class="bg-lines"></div>
+
+<div class="start-screen" id="start">
+    <div class="start-box">
+        <h1>ARE YOU READY?</h1>
+        <button onclick="startGame()">ENTER MY GAMING WORLD</button>
+    </div>
+</div>
+
+<div class="content" id="content">
+    <h2>🎮 My Hobby</h2>
+
+    <div class="card">
+        <p>
+            Playing Mobile Legends is my favourite hobby during my free time.
+            It helps improve my teamwork, strategy, and focus while enjoying competitive gameplay.
+        </p>
+
+        <img src="images/IMG_0156.JPG.JPG" class="ml-img" onclick="showGallery()">
+        <p style="margin-top:10px; font-size:14px;">(Click image to view achievements)</p>
+    </div>
+
+    <div class="gallery" id="gallery">
+        <h3>🏆 My Achievements</h3>
+
+        <div class="gallery-grid">
+            <img src="images/IMG_0158.JPG.JPG">
+            <img src="images/IMG_0159.JPG.JPG">
+            <img src="images/IMG_0155.JPG.JPG">
+            <img src="images/IMG_0163.PNG.PNG">
+            <img src="images/IMG-20211231-WA0029.jpg">
+            <img src="images/IMG-20220711-WA0030.jpg">
+            <img src="images/IMG-20240225-WA0044.jpg">
+            <img src="images/IMG-20250222-WA0050.jpg">
+            <img src="images/IMG-20250223-WA0013.jpg">
+            <img src="images/IMG-20250223-WA0103.jpg">
+            <img src="images/Screenshot_20220626-132731.jpg">
+        </div>
+    </div>
+
+    <a href="homepage.html" class="back">⬅ Back to Home</a>
+</div>
+
+
+<a href="#top" class="back-top" id="backTop">⬆</a>
+
+<script>
+function startGame() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("content").style.display = "block";
+}
+
+function showGallery() {
+    document.getElementById("gallery").style.display = "block";
+    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+}
+
+
+window.addEventListener("scroll", () => {
+    const btn = document.getElementById("backTop");
+    if (window.scrollY > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
