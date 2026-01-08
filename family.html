@@ -1,0 +1,263 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Family</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(images/bg\ image\ cream.jpg);
+    background-size: cover;
+    margin: 0;
+}
+
+/* 🎵 MUSIC BUTTON */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    background: rgba(75,46,131,0.95);
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.music-btn:hover {
+    transform: scale(1.15);
+    background: #3a2366;
+}
+
+.container {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+    color: #1f618d;
+    margin-top: 60px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: -10px;
+}
+
+/* SLIDER */
+.slider {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.slider img {
+    max-width: 100%;
+    max-height: 420px;
+    display: none;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.slider img.active {
+    display: block;
+    margin: auto;
+    animation: fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dots {
+    text-align: center;
+    margin-top: 14px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #cfd8dc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: #1f618d;
+    transform: scale(1.3);
+}
+
+p {
+    text-align: justify;
+    line-height: 1.8;
+    color: #333;
+    margin-top: 18px;
+}
+
+.footer-nav {
+    text-align: center;
+    margin: 50px 0 60px;
+}
+
+.footer-nav a {
+    display: inline-block;
+    margin: 8px 10px;
+    padding: 12px 22px;
+    background: #4b2e83;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎧 BACKGROUND MUSIC -->
+<audio id="bgMusic" autoplay muted loop>
+    <source src="audio/audio all/Compress Penjaga Hati.mp3" type="audio/mpeg">
+    
+</audio>
+
+<!-- 🎵 ICON -->
+<div class="music-btn" id="musicBtn" onclick="toggleMusic()">🔇</div>
+
+<div class="container">
+<h1>My Family</h1>
+
+<!-- FAMILY -->
+<h2>Family</h2>
+<div class="subtitle">The heart of my life</div>
+<div class="slider" data-group="family">
+    <img src="images/rayabiru.jpg.jpeg" class="family active">
+    <img src="images/IMG_0169.JPG.JPG" class="family">
+    <img src="images/IMG_0171.JPG.JPG" class="family">
+    <div class="dots">
+        <span class="dot active" onclick="showSlide('family',0)"></span>
+        <span class="dot" onclick="showSlide('family',1)"></span>
+        <span class="dot" onclick="showSlide('family',2)"></span>
+    </div>
+</div>
+<p>
+My family is the most important part of my life as they provide love, support, and motivation.
+</p>
+
+<!-- PARENTS -->
+<h2>Parents</h2>
+<div class="subtitle">My greatest inspiration</div>
+<div class="slider" data-group="parents">
+    <img src="images/IMG_0167.JPG.JPG" class="parents active">
+    <img src="images/WhatsApp Image 2025-12-26 at 6.26.28 PM (1).jpeg" class="parents">
+    <img src="images/parents3.jpg.jpeg" class="parents">
+    <div class="dots">
+        <span class="dot active" onclick="showSlide('parents',0)"></span>
+        <span class="dot" onclick="showSlide('parents',1)"></span>
+        <span class="dot" onclick="showSlide('parents',2)"></span>
+    </div>
+</div>
+<p>
+My parents are the pillars of strength in my life.
+</p>
+
+<!-- SISTER -->
+<h2>Little Sister</h2>
+<div class="subtitle">A source of joy</div>
+<div class="slider" data-group="sister">
+    <img src="images/fatin 1.jpeg" class="sister active">
+    <img src="images/fatin 2.jpeg" class="sister">
+    <img src="images/fatin3.jpeg" class="sister">
+    <div class="dots">
+        <span class="dot active" onclick="showSlide('sister',0)"></span>
+        <span class="dot" onclick="showSlide('sister',1)"></span>
+        <span class="dot" onclick="showSlide('sister',2)"></span>
+    </div>
+</div>
+
+<!-- BROTHER -->
+<h2>Little Brother</h2>
+<div class="subtitle">Energy of the family</div>
+<div class="slider" data-group="brother">
+    <img src="images/ammar1.jpeg" class="brother active">
+    <img src="images/WhatsApp Image 2025-12-26 at 6.26.28 PM.jpeg" class="brother">
+    <img src="images/ammar3.jpeg" class="brother">
+    <div class="dots">
+        <span class="dot active" onclick="showSlide('brother',0)"></span>
+        <span class="dot" onclick="showSlide('brother',1)"></span>
+        <span class="dot" onclick="showSlide('brother',2)"></span>
+    </div>
+</div>
+
+<div class="footer-nav">
+    <a href="homepage.html">⬅ Back to Home</a>
+    <a href="fav_music.html">Next ➡</a>
+</div>
+
+</div>
+
+<script>
+/* SLIDER AUTOPLAY */
+const index = { family:0, parents:0, sister:0, brother:0 };
+
+function showSlide(group, i) {
+    const slides = document.getElementsByClassName(group);
+    const dots = document.querySelectorAll(`[data-group="${group}"] .dot`);
+
+    slides[index[group]].classList.remove("active");
+    dots[index[group]].classList.remove("active");
+
+    index[group] = i;
+
+    slides[i].classList.add("active");
+    dots[i].classList.add("active");
+}
+
+setInterval(() => {
+    for (let group in index) {
+        const slides = document.getElementsByClassName(group);
+        showSlide(group, (index[group] + 1) % slides.length);
+    }
+}, 3000);
+
+/* MUSIC CONTROL */
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+function toggleMusic() {
+    if (music.muted) {
+        music.muted = false;
+        music.volume = 0.4;
+        music.play();
+        btn.innerHTML = "🔊";
+    } else {
+        music.muted = true;
+        btn.innerHTML = "🔇";
+    }
+}
+</script>
+
+</body>
+</html>
