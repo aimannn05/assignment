@@ -1,0 +1,301 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Biodata</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(images/bg\ image\ cream.jpg);
+    background-size: cover;
+}
+
+/* CONTENT */
+.container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    letter-spacing: 2px;
+}
+
+/* VIDEO */
+.video-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+video {
+    width: 320px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* ESSAY */
+.essay {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #333;
+    text-align: justify;
+}
+
+/* HANGING CARD */
+.rope {
+    position: absolute;
+    width: 3px;
+    background: #444;
+    transform-origin: top;
+    z-index: 1;
+}
+
+.pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #222;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.hanging-card {
+    position: absolute;
+    width: 220px;
+    height: 300px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+    transform-origin: top center;
+    cursor: grab;
+    z-index: 2;
+}
+
+.hanging-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+/* MAP */
+.map-box {
+    position: relative;
+    display: inline-block;
+}
+
+.map-box img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.click-me {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 12px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.map-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-top: 8px;
+}
+
+/* FOOTER NAV */
+.footer-nav {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.footer-nav a {
+    display: inline-block;
+    margin: 8px 10px;
+    padding: 12px 22px;
+    background: #4b2e83;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background: #3a2366;
+    transform: translateY(-2px);
+}
+
+/* 🎵 MUSIC ICON */
+#musicControl {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4b2e83;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#musicControl:hover {
+    background: #6b3fa0;
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- 🎵 AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="audio/audio all/Compress Penjaga Hati.mp3" type="audio/mpeg">
+    
+</audio>
+
+<!-- HANGING PHOTO -->
+<div class="rope" id="rope"></div>
+<div class="pin" id="pin"></div>
+
+<div class="hanging-card" id="card">
+    <img src="images/gambar tangging.jpeg">
+</div>
+
+<div class="container">
+    <h1>My Biodata</h1>
+
+    <div class="video-box">
+        <video autoplay muted loop playsinline>
+            <source src="Video/IMG_0207.MOV.MOV">
+        </video>
+    </div>
+
+    <div class="essay">
+        <p>My name is Aiman Hakimi bin Asrulnizam, and I am 20 years old.</p>
+        <p>I live in Tanjong Karang, Selangor, a town known for its peaceful environment.</p>
+        <p>I am currently studying at UiTM Campus Rembau in Information Management.</p>
+        <p>I hope to contribute positively to my family and society in the future.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Tanjong Karang</h1>
+
+    <div class="map-box">
+        <img src="images/tanjong karang map.jpeg" usemap="#tanjongkarang-map">
+        <div class="click-me">click me</div>
+    </div>
+
+    <div class="map-hint">Click on the Tanjong Karang area to explore more</div>
+
+    <map name="tanjongkarang-map">
+        <area shape="rect" coords="372,68,631,242"
+              href="https://ms.wikipedia.org/wiki/Tanjung_Karang"
+              target="_blank">
+    </map>
+
+    <p>
+        Tanjong Karang is a town in Kuala Selangor, well known for paddy farming.
+    </p>
+</div>
+
+<div class="footer-nav">
+    <a href="#top">⬆ Back to Top</a>
+    <a href="homepage.html">⬅ Back to Home</a>
+    <a href="education.html">Next ➡</a>
+</div>
+
+<!-- 🔊 MUSIC BUTTON -->
+<div id="musicControl">🔇</div>
+
+<script>
+// 🎵 Music Control
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicControl");
+let isPlaying = false;
+
+btn.onclick = () => {
+    if (!isPlaying) {
+        music.play();
+        btn.textContent = "🔊";
+        isPlaying = true;
+    } else {
+        music.pause();
+        btn.textContent = "🔇";
+        isPlaying = false;
+    }
+};
+
+// 🪢 Hanging Card Animation
+const card = document.getElementById("card");
+const rope = document.getElementById("rope");
+const pin = document.getElementById("pin");
+
+let cardX = 40, cardY = 120;
+card.style.left = cardX + "px";
+card.style.top = cardY + "px";
+
+let isDragging = false, offsetX, offsetY, angle = 0;
+
+function updateRope() {
+    const rect = card.getBoundingClientRect();
+    const topX = rect.left + rect.width / 2;
+    const bottomY = rect.top;
+
+    rope.style.height = bottomY + "px";
+    rope.style.left = topX + "px";
+    rope.style.top = "0px";
+
+    pin.style.left = topX - 9 + "px";
+    pin.style.top = bottomY - 9 + "px";
+}
+
+function swing() {
+    if (!isDragging) {
+        angle += 0.04;
+        card.style.transform = `rotate(${Math.sin(angle) * 3}deg)`;
+    }
+    updateRope();
+    requestAnimationFrame(swing);
+}
+swing();
+
+card.addEventListener("mousedown", e => {
+    isDragging = true;
+    offsetX = e.clientX - card.offsetLeft;
+    offsetY = e.clientY - card.offsetTop;
+});
+
+document.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    card.style.left = e.clientX - offsetX + "px";
+    card.style.top = e.clientY - offsetY + "px";
+});
+
+document.addEventListener("mouseup", () => isDragging = false);
+</script>
+
+</body>
+</html>
